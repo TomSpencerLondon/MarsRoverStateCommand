@@ -5,7 +5,7 @@ import static org.apache.commons.lang.builder.HashCodeBuilder.reflectionHashCode
 
 public class Rover {
 
-  private final int x;
+  private int x;
   private int y;
   private final String direction;
 
@@ -19,7 +19,10 @@ public class Rover {
     if (commandSequence.equals("")){
       return;
     }
-    y  = y + 1;
+    if (direction.equals("N"))
+      y  += 1;
+    else
+      x += 1;
   }
 
   @Override
