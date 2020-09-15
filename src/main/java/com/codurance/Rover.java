@@ -23,8 +23,10 @@ public class Rover {
       y  += 1;
     else if (direction.equals("E"))
       x += 1;
-    else
+    else if (direction.equals("S"))
       y -= 1;
+    else
+      x -= 1;
   }
 
   @Override
