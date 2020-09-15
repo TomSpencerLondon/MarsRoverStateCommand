@@ -15,8 +15,7 @@ public class Rover {
     this.direction = direction;
   }
 
-  public Rover receive(String input) {
-    return new Rover(1, 3, "N");
+  public void receive(String input) {
   }
 
   @Override
