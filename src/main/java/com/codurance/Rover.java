@@ -6,7 +6,7 @@ import static org.apache.commons.lang.builder.HashCodeBuilder.reflectionHashCode
 public class Rover {
 
   private final int x;
-  private final int y;
+  private int y;
   private final String direction;
 
   public Rover(int x, int y, String direction) {
@@ -15,7 +15,16 @@ public class Rover {
     this.direction = direction;
   }
 
-  public void receive(String input) {
+  public void receive(String commandSequence) {
+    if (commandSequence.equals("")){
+      return;
+    }
+    y  = y + 1;
+  }
+
+  @Override
+  public String toString() {
+    return "x: " + x + ", y: " + y + ", direction: " + direction;
   }
 
   @Override
