@@ -18,7 +18,6 @@ public class RoverTest {
   @Test
   void moving_forward_when_facing_north() {
     Rover rover = new Rover(3, 6, "N");
-
     rover.receive("f");
 
     assertThat(rover, is(new Rover(3, 7, "N")));
@@ -27,7 +26,6 @@ public class RoverTest {
   @Test
   void moving_forward_when_facing_east() {
     Rover rover = new Rover(1, 3, "E");
-
     rover.receive("f");
 
     assertThat(rover, is(new Rover(2, 3, "E")));
@@ -36,7 +34,6 @@ public class RoverTest {
   @Test
   void moving_forward_when_facing_south() {
     Rover rover = new Rover(5, 3, "S");
-
     rover.receive("f");
 
     assertThat(rover, is(new Rover(5, 2, "S")));
@@ -45,7 +42,6 @@ public class RoverTest {
   @Test
   void moving_forward_when_facing_west() {
     Rover rover = new Rover(5, 3, "W");
-
     rover.receive("f");
 
     assertThat(rover, is(new Rover(4, 3, "W")));

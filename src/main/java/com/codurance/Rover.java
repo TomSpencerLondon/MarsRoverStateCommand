@@ -8,11 +8,19 @@ public class Rover {
   private int x;
   private int y;
   private final String direction;
+  private Coordinates coordinates;
 
   public Rover(int x, int y, String direction) {
     this.x = x;
     this.y = y;
     this.direction = direction;
+    this.coordinates = new Coordinates(x, y);
+  }
+
+  public void setCoordinates(int x, int y){
+    this.x = x;
+    this.y = y;
+    this.coordinates = new Coordinates(x, y);
   }
 
   public void receive(String commandSequence) {
@@ -20,13 +28,13 @@ public class Rover {
       return;
     }
     if (direction.equals("N"))
-      y  += 1;
+      setCoordinates(x,y + 1);
     else if (direction.equals("E"))
-      x += 1;
+      setCoordinates(x + 1, y);
     else if (direction.equals("S"))
-      y -= 1;
+      setCoordinates(x, y - 1);
     else
-      x -= 1;
+      setCoordinates(x - 1, y);
   }
 
   @Override
